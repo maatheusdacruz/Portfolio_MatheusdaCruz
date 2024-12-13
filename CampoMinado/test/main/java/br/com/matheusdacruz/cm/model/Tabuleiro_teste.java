@@ -1,5 +1,4 @@
 package br.com.matheusdacruz.cm.model;
-import br.com.matheusdacruz.cm.exception.ExplosaoException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

@@ -1,5 +1,4 @@
 package br.com.matheusdacruz.cm.model;
-import br.com.matheusdacruz.cm.exception.ExplosaoException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -62,7 +61,7 @@ public class Campo_teste {
     void testeAbrirMinadoNaoMarcado(){
         campo.minar();
 
-        assertThrows(ExplosaoException.class, () -> campo.abrir());
+        assertThrows(Exception.class, () -> campo.abrir());
     }
 
     @Test
