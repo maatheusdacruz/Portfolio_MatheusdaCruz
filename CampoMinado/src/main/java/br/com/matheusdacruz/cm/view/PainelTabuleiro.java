@@ -7,10 +7,13 @@ import java.awt.*;
 
 public class PainelTabuleiro extends JPanel {
     public PainelTabuleiro(Tabuleiro tabuleiro) {
+        initComponents(tabuleiro);
+    }
+    private void initComponents(Tabuleiro tabuleiro) {
         setLayout(new GridLayout(
                 tabuleiro.getLinhas(), tabuleiro.getColunas()));
 
-        tabuleiro.paraCada(c-> add(new BotaoCampo(c)));
+        tabuleiro.paraCada(c-> add(new  BotaoCampo(c)));
 
         tabuleiro.registraObservador(e-> {
 
@@ -25,4 +28,5 @@ public class PainelTabuleiro extends JPanel {
             });
         });
     }
+
 }
