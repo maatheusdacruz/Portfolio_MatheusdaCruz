@@ -11,7 +11,7 @@ public class Memoria {
     private String textoAtual = "";
     private String textBuffer = "";
     private enum TipoComando {
-          ZERAR, SINAL, NUMERO, DIV, MULT, SUB, SOMA, IGUAL, VIRGULA;
+          ZERAR, SINAL, NUMERO, DIV, MULT, SUB, SOMA, PORCENTO, IGUAL, VIRGULA;
     };
     private Memoria(){
 
@@ -47,6 +47,13 @@ public class Memoria {
             textoAtual = textoAtual.substring(1);
         }else if(tipo == TipoComando.SINAL && !textoAtual.contains("-")){
             textoAtual = "-" + textoAtual;
+        } else if(tipo == TipoComando.PORCENTO) {
+            substituir = true;
+            textBuffer = textoAtual;
+            ultimaOperacao = tipo;
+            textoAtual = resultadoOperacao();
+            ultimaOperacao = null;
+            substituir = false;
         } else {
             substituir = true;
             textoAtual = resultadoOperacao();
@@ -71,6 +78,8 @@ public class Memoria {
             resultado = numeroBuffer + numeroAtual;
         } else if(ultimaOperacao == TipoComando.DIV){
             resultado = numeroBuffer / numeroAtual;
+        }else if(ultimaOperacao == TipoComando.PORCENTO){
+            resultado = numeroBuffer / 100;
         }else if(ultimaOperacao == TipoComando.MULT){
             resultado = numeroBuffer * numeroAtual;
         }else if(ultimaOperacao == TipoComando.SUB){
@@ -95,6 +104,8 @@ public class Memoria {
                 return TipoComando.ZERAR;
             }else if("+/-".equals(comando)){
                 return TipoComando.SINAL;
+            }else if("%".equals(comando)){
+                return TipoComando.PORCENTO;
             } else if("/".equals(comando)){
                 return TipoComando.DIV;
             } else if("*".equals(comando)){
