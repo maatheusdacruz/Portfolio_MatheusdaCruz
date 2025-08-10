@@ -6,7 +6,7 @@ export function Menu() {
         <header>
             <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                    <a href="https://flowbite.com" className="flex items-center">
+                    <a href="/" className="flex items-center">
                         <img src={logo} className="mr-3 h-6 sm:h-9" alt="Matheus Logo" />
                         <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Matheus</span>
                     </a>
@@ -22,16 +22,16 @@ export function Menu() {
                     <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                         <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                             <MenuItem>
-                                Home
+                                <a href="/">Home</a>
                             </MenuItem>
                             <MenuItem>
-                                Projetos
+                                <a href="/projects">Projetos</a>
                             </MenuItem>
                             <MenuItem>
-                                Sobre Mim
+                                <a href="/about">Sobre Mim</a>
                             </MenuItem>
                             <MenuItem>
-                                Contato
+                                <a href="/contact">Contato</a>
                             </MenuItem>
                         </ul>
                     </div>

@@ -1,4 +1,6 @@
+import {CorpoHome} from "../components/corpoHome";
+
 function Home() {
-  return <h1>Bem-vindo</h1>;
+  return <CorpoHome />;
 }
 export default Home;
