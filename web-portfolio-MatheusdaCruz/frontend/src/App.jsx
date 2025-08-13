@@ -4,6 +4,7 @@ import { Menu } from './components/menu';
 import { Footer } from './components/footer';
 import Home from './pages/Home';
 import About from './pages/About';
+import Projects from './pages/Projects';
 
 function App() {
   const [mensagem, setMensagem] = useState('');
@@ -20,6 +21,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
