@@ -1,10 +1,12 @@
-import express from 'express';
-import {home} from '../controllers/ControllerHome.js';
-import {about} from '../controllers/ControllerAbout.js';
+const express = require('express');
+const { Home } = require('../controllers/ControllerHome');
+const { About } = require('../controllers/ControllerAbout');
+const { Projects } = require('../controllers/ControllerProjects');
 
 const router = express.Router();
 
-router.get('/', home);
-router.get('/about', about);
+router.get('/', Home);
+router.get('/about', About);
+router.get('/projects', Projects);
 
-export default router;
+module.exports = router;

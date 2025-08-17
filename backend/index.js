@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
   res.send("Backend funcionando 🚀");
 });
 
+
+const userRoutes = require('./src/routes/userRoutes');
+app.use('/', userRoutes);
+
 app.listen(PORT, () => {
   console.log(`Servidor backend rodando em http://localhost:${PORT}`);
 });

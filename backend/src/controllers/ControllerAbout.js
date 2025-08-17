@@ -1,3 +1,5 @@
-export function About(req, res){
+function About(req, res) {
   res.json({ message: 'Hello from the About!' });
 }
+
+module.exports = { About };
