@@ -8,7 +8,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 
 // URL do backend hospedado (troque pela sua URL real do Render)
-const BACKEND_URL = "https://portfolio-matheusdacruz.onrender.com/";
+const BACKEND_URL = "https://portfolio-matheusdacruz.onrender.com";
 
 // Função utilitária para consumir qualquer rota do backend
 function fetchBackend(route) {
